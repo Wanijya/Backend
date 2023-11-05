@@ -13,7 +13,7 @@ router.get("/failed", function (req, res) {
 });
 
 router.get("/checkkro", function (req, res) {
-  console.log(req.flash("age"), req.flash("name"));
+  console.log(req.flash("age"), req.flash("name")); 
   res.send("check kro backend ke terminal pe!");
 });
 
