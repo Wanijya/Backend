@@ -12,7 +12,7 @@ router.get("/failed", function (req, res) {
   res.send("bangya");
 });
 
-router.get("/checkkro", function (req, res) {
+router.get("/checkkro", function (req, res) { 
   console.log(req.flash("age"), req.flash("name")); 
   res.send("check kro backend ke terminal pe!");
 });
