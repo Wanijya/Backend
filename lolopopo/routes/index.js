@@ -4,7 +4,21 @@ const userModel = require("./users");
 
 /* GET home page. */
 router.get("/", function (req, res) {
+  req.session.ban = true;
   res.render("index");
+});
+router.get("/checkban", function (req, res) {
+  if (req.session.ban === true) {
+    res.send("you are baned!");
+  } else {
+    res.send("not baned!");
+  }
+});
+router.get("/removeban", function (req, res) {
+  req.session.destroy(function (err) {
+    console.log(err);
+    res.send("ban removed!");
+  });
 });
 
 router.get("/create", async function (req, res) {
