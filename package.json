@@ -1,24 +1,24 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Wanijya/Backend.git"
   },
-  "author": "Wanijya Bisen",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Wanijya/Backend/issues"
   },
   "homepage": "https://github.com/Wanijya/Backend#readme",
-  "description": "",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
     "express": "^4.19.2"
   }
 }
