@@ -1,6 +1,9 @@
 const express = require("express"); //this is bacially you require express package, jo bhi chije express me hai wo nikal ke const express me aa gai hai.
 const app = express(); // express ki poori power app me aa gai hai.
 
+app.use(express.json()); // jab apn json fomet me data bhejte hai us read krne ke liye ye line kaam aati hai.
+app.use(express.urlencoded({extended: true})); // ye dono line se jo server me bheja hai detail wo kuchha hat tak readable ho jayegi.
+
 app.use(function (req, res, next) {
   console.log("Middelware chala!");
   next(); //next kaa use hai ki jb aapka kaam ho gya hai to req ko aage forword kro.
