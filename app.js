@@ -1,40 +1,19 @@
-const express = require("express");
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const bycrypt = require('bcrypt');
 const app = express();
-const path = require("path");
-const userModel = require("./models/user");
 
-app.set("view engine", "ejs");
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use(cookieParser());
 
-app.get("/read", async (req, res) => {
-    let users = await userModel.find();
-  res.render("read", {users});
-});
+app.get('/', (req, res) => {
+    res.cookie("name", "Aaru");
+    res.send("done");
+})
 
-app.get("/edit/:userid", async (req, res) => {
-  let user = await userModel.findOne({userid: req.params.userid});
-  res.render("edit", {user});
-});
+app.get('/read', (req, res) => {
+    console.log(req.cookies);
+    res.send("read page");
+})
 
-app.get("/delete/:id", async (req, res) => {
-    let users = await userModel.findOneAndDelete({_id: req.params.id});
-    res.redirect("/read");
-});
-
-app.post("/create", async (req, res) => {
-  let { name, email, image } = req.body;
-  let createdUser = await userModel.create({
-    name,
-    email,
-    image,
-  });
-  res.redirect("/read");
-});
-
-app.listen(3000);
+app.listen(3000)
