@@ -1,0 +1,17 @@
+Aggregation Pipeline : An aggregation pipeline in MongoDB is a framework that allows you to process and transform data in a collection through multiple stages. Each stage performs a specific operation, such as filtering, grouping, or sorting the data, and then passes the result to the next stage. This pipeline approach helps in performing complex data transformations and aggregations efficiently in a step-by-step manner, much like an assembly line.
+ jaha par bhi lgana hai wha par: 
+ db.aggregate([
+    {}, // yha par stage banta hai ye stage 1 hai 
+    {} // ye stage 2 hai
+ ])
+
+$match = The "$match" stage in MongoDB's aggregate pipeline is used to filter documents based on certain criteria. For example, if you have a collection of student records and you want to find all students who have scored more than 80 marks, you would use $match to filter out only those records. It's like saying 'only give me the documents that meet this condition' before doing any further processing.
+
+$lookup = stage in MongoDB aggregate pipeline is used to perform a join between two collection. It allows you to combine related data from different collections into a single result set. For example, if you have a collection of orders and a separate collection of customers, you can use $lookup to add customer information to each order by matching customer IDs.
+
+$addFields = is used to add new fileds to documents. It allows you to create or modify fields based on existing data. For example, if you have a collection of products with prices and you want to add a new field for sales tax, you can use $addFields to calculate and include the sales tax for each product.
+
+$project = The $project stage in MongoDB's aggregation pipeline lets you choose which fields you want to keep in your documents. Think of it like selecting specific columns in a table. For example, if you have a collection with many details about users but you only need their names and emails, you can use $project to include just those fields and exclude the rest. 
+
+$cond = means conditions.
+$in = means presnt hai yaa nhi hai ($in: in jo hai wo arrays me bhi dekha leta hai and objects me bhi dekha leta hai.)
