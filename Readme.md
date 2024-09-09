@@ -16,6 +16,3 @@ This is a REST API for a video streaming platform where users can upload, like, 
 - **Cloudinary**: Cloud storage for serving uploaded video files.
 - **JWT (JSON Web Token)**: For secure authentication and authorization.
 - **dotenv**: For managing environment variables.
-
-This is all about Backend.
-- [Model Links](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj)
